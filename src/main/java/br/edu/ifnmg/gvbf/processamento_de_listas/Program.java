@@ -50,10 +50,8 @@ public class Program
         // ... a cada 10 iterações do for externo
         Dupla<Double, Double> resposta = ProcessadorListas.processarListas(ins, outs);
         
-        // Na primeira linha de saída temos a Dupla resultante com muitas casas decimais
-        // Na segunda linha de saída temos a Dupla resultante com cada elemento limitado a 3 casas decimais
+        // Na saída temos a Dupla resultante com cada elemento limitado a 3 casas decimais
         // Para a entrada exemplo atual, a saída esperada na segunda linha é: '0,506 2,215'
-        System.out.println(resposta);
         System.out.printf("%.3f %.3f\n", resposta.getPrimeiro(), resposta.getSegundo());
     }
 }

@@ -63,7 +63,8 @@ public class ProcessadorListas
                 w1 += dif * lr * ins.get(i_lista);
             }
             
-            if (i % 10 == 0) System.out.println(i + "/" + w1 + "/" + w0);
+            // A cada 10 iterações do for externo, gera-se uma linha na saída com valores provisórios da resposta
+            if (i % 10 == 0) System.out.printf("%d/%.3f/%.3f\n", i, w1, w0);
         }
         
         return new Dupla<> (w1, w0);
