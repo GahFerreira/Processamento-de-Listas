@@ -23,14 +23,46 @@
  */
 package br.edu.ifnmg.gvbf.processamento_de_listas;
 
+import java.util.ArrayList;
+
 /**
  * @version 1.0
  * @author GahFerreira
  */
-public class Program 
+public class ProcessadorListas 
 {
-    public static void main(String[] args) 
+    public static Dupla<Double, Double> processarListas(ArrayList<Double> ins, ArrayList<Double> outs)
     {
+        return processarListas(ins, outs, 2000, 0.025);
+    }
+    
+    public static Dupla<Double, Double> processarListas(ArrayList<Double> ins, ArrayList<Double> outs, Integer e)
+    {
+        return processarListas(ins, outs, e, 0.025);
+    }
+    
+    public static Dupla<Double, Double> processarListas(ArrayList<Double> ins, ArrayList<Double> outs, Integer e, Double lr)
+    {
+        Double w0, w1, p, dif;
+        int tamanho_listas;
         
+        w0 = 0.0;
+        w1 = 0.0;
+        tamanho_listas = ins.size();
+        
+        for (int i = 1; i <= e; i++)
+        {
+            for(int i_lista = 0; i_lista < tamanho_listas; i_lista++)
+            {
+                p = w1 * ins.get(i_lista) + w0;
+                dif = outs.get(i_lista) - p;
+                w0 += dif * lr;
+                w1 += dif * lr * ins.get(i_lista);
+            }
+            
+            if (i % 10 == 0) System.out.println(i + "/" + w1 + "/" + w0);
+        }
+        
+        return new Dupla<> (w1, w0);
     }
 }
