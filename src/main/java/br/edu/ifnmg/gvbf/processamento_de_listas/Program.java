@@ -23,6 +23,10 @@
  */
 package br.edu.ifnmg.gvbf.processamento_de_listas;
 
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+
 /**
  * @version 1.0
  * @author GahFerreira
@@ -30,7 +34,15 @@ package br.edu.ifnmg.gvbf.processamento_de_listas;
 public class Program 
 {
     public static void main(String[] args) 
-    {
+    {                
+        Double in[] = {2.900000095, 6.699999809, 4.900000095, 7.900000095, 9.800000191, 6.900000095, 6.099999905, 6.199999809, 6.0, 5.099999905, 4.699999809, 4.400000095, 5.800000191};
+        Double out[] = {4.0, 7.400000095, 5.0, 7.199999809, 7.900000095, 6.099999905, 6.0, 5.800000191, 5.199999809, 4.199999809, 4.0, 4.400000095, 5.199999809};
         
+        List<Double> ins = new ArrayList<>( Arrays.asList(in) );
+        List<Double> outs = new ArrayList<>( Arrays.asList(out) );
+        
+        Dupla<Double, Double> resposta = ProcessadorListas.processarListas(ins, outs);
+        System.out.println(resposta);
+        System.out.printf("%.3f %.3f\n", resposta.getPrimeiro(), resposta.getSegundo());
     }
 }
