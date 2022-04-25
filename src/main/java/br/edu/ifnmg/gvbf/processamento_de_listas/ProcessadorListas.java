@@ -26,6 +26,9 @@ package br.edu.ifnmg.gvbf.processamento_de_listas;
 import java.util.List;
 
 /**
+ * A classe processa duas listas de Double a fim de gerar uma Dupla de dois Double
+ * A Dupla gerada é baseada em uma série de operações aritméticas
+ * 
  * @version 1.0
  * @author GahFerreira
  */

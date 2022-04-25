@@ -24,10 +24,13 @@
 package br.edu.ifnmg.gvbf.processamento_de_listas;
 
 /**
+ * A classe guarda dois elementos: 'primeiro' de tipo T e 'segundo' de tipo U
+ * 
+ * @param <T> Primeiro elemento da Dupla, de tipo genérico T
+ * @param <U> Segundo elemento da Dupla, de tipo genérico U
+ * 
  * @version 1.0
  * @author GahFerreira
- * @param <T> Primeiro elemento da Dupla, cujo tipo é T
- * @param <U> Segundo elemento da Dupla, cujo tipo é U
  */
 public class Dupla<T, U> 
 {
