@@ -47,20 +47,20 @@ public class ProcessadorListas
     public static Dupla<Double, Double> processarListas(List<Double> ins, List<Double> outs, Integer e, Double lr)
     {
         Double w0, w1, p, dif;
-        int tamanho_listas;
+        int tamanhoListas;
         
         w0 = 0.0;
         w1 = 0.0;
-        tamanho_listas = ins.size();
+        tamanhoListas = ins.size();
         
         for (int i = 1; i <= e; i++)
         {
-            for(int i_lista = 0; i_lista < tamanho_listas; i_lista++)
+            for(int iLista = 0; iLista < tamanhoListas; iLista++)
             {
-                p = w1 * ins.get(i_lista) + w0;
-                dif = outs.get(i_lista) - p;
+                p = w1 * ins.get(iLista) + w0;
+                dif = outs.get(iLista) - p;
                 w0 += dif * lr;
-                w1 += dif * lr * ins.get(i_lista);
+                w1 += dif * lr * ins.get(iLista);
             }
             
             // A cada 10 iterações do for externo, gera-se uma linha na saída com valores provisórios da resposta
