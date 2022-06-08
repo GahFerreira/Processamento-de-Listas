@@ -55,7 +55,7 @@ public class ProcessadorListas
         
         for (int i = 1; i <= e; i++)
         {
-            for(int iLista = 0; iLista < tamanhoListas; iLista++)
+            for (int iLista = 0; iLista < tamanhoListas; iLista++)
             {
                 p = w1 * ins.get(iLista) + w0;
                 dif = outs.get(iLista) - p;
